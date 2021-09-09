@@ -1,7 +1,27 @@
 <!-- property binding -->
 <div class="container">
-    <button class="btn btn-primary mt-1 mb-1" [disabled]="!allowNewServer">Add Server</button>
+    <!-- <button class="btn btn-primary mt-1 mb-1" [disabled]="!allowNewServer">Add Server</button> -->
+
+    <label>Server Name</label>
+    <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+    <input type="text" class="form-control" [(ngModel)]="serverName">
+    <p>{{ serverName }}</p>
+    <button class="btn btn-primary mt-1 mb-1" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+    <!-- interpolasi string -->
+    <p>{{ allowNewServer }}</p>
+
+    <!-- property -->
+    <!-- <p [innerText]="allowNewServer"></p> -->
 </div>
+
+<hr>
+
+<div class="container">
+    <p>{{ serverCreationStatus }}</p>
+</div>
+
+<hr>
 
 <app-server></app-server>
 <app-server></app-server>
