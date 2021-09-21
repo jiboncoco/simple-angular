@@ -2,12 +2,12 @@
     <h1 class="h3">Hi this is a server</h1>
 
     <!-- binding using get data / string interpolation-->
-    <p>
+    <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">
         {{ 'Server' }} with ID {{ serverId }} is {{ serverStatus }}
     </p>
 
     <!-- binding using get data & method / string interpolation-->
-    <p>
+    <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">
         {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
     </p>
 </div>
